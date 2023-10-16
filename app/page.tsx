@@ -35,18 +35,26 @@ const getRandomPhotos = async (): Promise<Photo[]> => {
 
 const Home = async () => {
   const randomPhotos = await getRandomPhotos();
+
   return (
     <div className="grid grid-cols-3 gap-4 w-[1200px] mx-auto">
-      {[0, 1, 2].map((index) => (
-        <div key={randomPhotos[index].id}>
-          <Image
-            src={randomPhotos[index].urls.small}
-            width={400}
-            height={
-              randomPhotos[index].height * (400 / randomPhotos[index].width)
+      {[0, 1, 2].map((columnIndex) => (
+        <div key={columnIndex}>
+          {randomPhotos.map((photo, photoIndex) => {
+            if (photoIndex % 3 !== columnIndex) {
+              return (
+                <div key={photo.id} className="mb-4 last:mb-0">
+                  <Image
+                    src={photo.urls.small}
+                    width={400}
+                    height={photo.height * (400 / photo.width)}
+                    alt={photo.description}
+                  />
+                </div>
+              );
             }
-            alt={randomPhotos[index].description}
-          />
+            return null;
+          })}
         </div>
       ))}
     </div>
