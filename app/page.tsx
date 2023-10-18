@@ -1,17 +1,5 @@
 import Image from "next/image";
-import { Photo } from "@/lib/types";
-
-const getRandomPhotos = async (): Promise<Photo[]> => {
-  const params = new URLSearchParams();
-  params.append("client_id", process.env.UNSPLASH_API_ACCESS_KEY ?? "");
-  params.append("count", "32");
-
-  const response = await fetch(
-    `https://api.unsplash.com/photos/random?${params.toString()}`,
-    { method: "GET", cache: "no-cache" }
-  );
-  return response.json();
-};
+import { getRandomPhotos } from "@/lib/unsplash";
 
 const Home = async () => {
   const randomPhotos = await getRandomPhotos();
