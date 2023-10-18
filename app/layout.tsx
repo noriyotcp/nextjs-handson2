@@ -14,22 +14,22 @@ export default function RootLayout({
       <body>
         <header
           className={`
-          h-16
-          bg-transparent
-          backdrop-blur-md
-          flex
-          fixed
-          w-full
-          px-6
+            h-16
+            bg-transparent
+            backdrop-blur-md
+            flex
+            fixed
+            w-full
+            px-6
         `}
         >
           <div
             className={`
-            h-auto
-            my-auto
-            font-bold
-            text-5xl
-            tracking-tighter
+              h-auto
+              my-auto
+              font-bold
+              text-5xl
+              tracking-tighter
           `}
           >
             Search Image
