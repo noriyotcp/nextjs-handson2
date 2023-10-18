@@ -1,25 +1,5 @@
 import Image from "next/image";
-
-type Photo = {
-  id: string;
-  created_at: string;
-  width: number;
-  height: number;
-  color: string;
-  description: string;
-  urls: {
-    raw: string;
-    full: string;
-    regular: string;
-    small: string;
-    thumb: string;
-  };
-  links: {
-    self: string;
-    html: string;
-    download: string;
-  };
-};
+import { Photo } from "@/lib/types";
 
 const getRandomPhotos = async (): Promise<Photo[]> => {
   const params = new URLSearchParams();
