@@ -20,7 +20,7 @@ export const PhotoList: FunctionComponent<{
                     src={photo.urls.small}
                     width={400}
                     height={photo.height * (400 / photo.width)}
-                    alt={photo.description}
+                    alt={photo.alt_description}
                     onClick={() => {
                       window.open(photo.links.html, "_blank");
                     }}

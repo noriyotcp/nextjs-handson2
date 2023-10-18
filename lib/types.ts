@@ -4,7 +4,7 @@ export type Photo = {
   width: number;
   height: number;
   color: string;
-  description: string;
+  alt_description: string;
   urls: {
     raw: string;
     full: string;
